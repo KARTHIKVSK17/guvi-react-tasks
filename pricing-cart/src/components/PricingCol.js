@@ -12,10 +12,15 @@ function PricingCol({tier, pricing, features}){
                     </h6>
                     <hr />
                     <ul className="fa-ul">
+                        {/* Create the list of features */}
                         {features.map((feature) => {
                             console.log(feature);
                             return (
-                            <FeatureItem title={feature.title} availability={feature.availability} key={feature.id}/>
+                            <FeatureItem 
+                                title={feature.title} 
+                                availability={feature.availability} 
+                                key={feature.id}
+                            />
                            ) 
                         })}
                     </ul>

@@ -6,6 +6,8 @@ import PricingCol from './components/PricingCol';
 
 
 function App() {
+
+  // Features List Available
   const tierFeatures = {
       "free": [
         {"id":"0", "title":"Single User", "availability": true },
@@ -52,11 +54,13 @@ function App() {
                     pricing = { 0 }
                     features = { tierFeatures["free"] }
                   />
+                  {/* <!-- Plus Tier --> */}
                   <PricingCol 
                     tier = { "Plus" }
                     pricing = { 200 }
                     features = { tierFeatures["plus"] }
                   />
+                  {/* <!-- Pro Tier --> */}
                   <PricingCol 
                     tier = { "Pro" }
                     pricing = { 800 }
