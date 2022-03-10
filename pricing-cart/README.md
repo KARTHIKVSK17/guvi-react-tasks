@@ -1,3 +1,10 @@
+# Pricing Cart
+
+### To see the demo pricing table click here [demo](https://laughing-dubinsky-0527f1.netlify.app/)
+
+<hr />
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
