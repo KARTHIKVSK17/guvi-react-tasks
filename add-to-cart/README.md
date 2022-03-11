@@ -1,6 +1,6 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Task 2: Shopping Cart
+Rating according to value give Disable add to cart button when added to the card Remove item from cart & enable add to cart https://startbootstrap.com/previews/shop-homepage <br>
+[Demo](https://frosty-noyce-9a8b51.netlify.app/)
 
 ## Available Scripts
 
