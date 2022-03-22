@@ -1,6 +1,6 @@
 import UserRow from "../components/UserRow";
 
-function Home({ users }) {
+function Home({ users, userList, setUserList }) {
   console.log(users);
   return (
     <>
@@ -44,7 +44,14 @@ function Home({ users }) {
                   <tbody>
                     {users.map((user) => {
                       console.log(user);
-                      return <UserRow key={user.id} userdata={user} />;
+                      return (
+                        <UserRow
+                          key={user.id}
+                          userdata={user}
+                          userList={userList}
+                          setUserList={setUserList}
+                        />
+                      );
                     })}
                   </tbody>
                 </table>

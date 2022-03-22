@@ -11,26 +11,7 @@ function EditUser({ userList, setUserList }) {
 
   const [userName, setUserName] = useState(fdUser[0]["name"]);
   const [userEmail, setUserEmail] = useState(fdUser[0]["email"]);
-
-  // console.log("fdUser", fdUser);
-
-  // const [user, setUser] = useState({
-  //   id: "",
-  //   name: "",
-  //   email: "",
-  // });
-
-  // const onInputChange = (e) => {
-  //   setUserName(e.target.value);
-  //   userEmail(e.target.value);
-  // };
-
-  // const loadUser = () => {
-  //   const fdUser = userList.filter((obj) => {
-  //     return obj.id === id;
-  //   });
-  //   setUser(fdUser[0]);
-  // };
+  const [userPic, setUserPic] = useState(fdUser[0]["pic"]);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -38,6 +19,7 @@ function EditUser({ userList, setUserList }) {
       if (obj.id === id) {
         obj["name"] = userName;
         obj["email"] = userEmail;
+        obj["pic"] = userPic;
       }
     });
     setUserList(userList);
@@ -68,6 +50,16 @@ function EditUser({ userList, setUserList }) {
             name="userEmail"
             value={userEmail}
             onChange={(e) => setUserEmail(e.target.value)}
+          />
+        </div>
+        <div className="mb-3">
+          <input
+            type="text"
+            className="form-control"
+            id="userPic"
+            name="userPic"
+            value={userPic}
+            onChange={(e) => setUserPic(e.target.value)}
           />
         </div>
         <button

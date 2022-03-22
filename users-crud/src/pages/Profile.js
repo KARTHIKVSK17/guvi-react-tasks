@@ -19,8 +19,22 @@ function Profile({ userList }) {
       <h3>{fdUser[0].name}</h3>
       <p>{fdUser[0].email}</p>
       <nav className="profile-btns">
-        <button className="btn btn-primary">Go Home</button>
-        <button className="btn btn-primary">Edit Profile</button>
+        <button
+          className="btn btn-primary"
+          onClick={(e) => {
+            history.push("/");
+          }}
+        >
+          Go Home
+        </button>
+        <button
+          className="btn btn-primary"
+          onClick={(e) => {
+            history.push("/editprofile/" + id);
+          }}
+        >
+          Edit Profile
+        </button>
       </nav>
     </div>
   );

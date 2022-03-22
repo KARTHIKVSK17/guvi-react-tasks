@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faPen, faEye } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 
-function UserRow({ userdata }) {
+function UserRow({ userdata, userList, setUserList }) {
   const history = useHistory();
   return (
     <tr>
@@ -17,6 +17,14 @@ function UserRow({ userdata }) {
         <button
           type="button"
           className="btn btn-outline-info btn-circle btn-sm btn-circle ml-2"
+          onClick={(e) => {
+            let updatedList = userList.filter(function (obj) {
+              return obj.id !== userdata.id;
+            });
+            console.log(updatedList);
+            setUserList(updatedList);
+            history.push("/");
+          }}
         >
           <FontAwesomeIcon icon={faXmark} />
         </button>

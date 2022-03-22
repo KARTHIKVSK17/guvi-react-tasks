@@ -1,11 +1,11 @@
 import "bootstrap/dist/css/bootstrap.css";
-// import 'font-awesome/css/font-awesome.min.css';
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import AddUser from "./pages/AddUser";
 import EditUser from "./pages/EditUser";
 import Profile from "./pages/Profile";
+import EditProfile from "./pages/EditProfile";
 import { useState } from "react";
 import NavBar from "./components/NavBar";
 
@@ -50,7 +50,11 @@ function App() {
       <div className="container">
         <Switch>
           <Route path="/" exact>
-            <Home users={userList} />
+            <Home
+              users={userList}
+              userList={userList}
+              setUserList={setUserList}
+            />
           </Route>
           <Route path="/adduser">
             <AddUser userList={userList} setUserList={setUserList} />
@@ -60,6 +64,9 @@ function App() {
           </Route>
           <Route path="/profile/:id">
             <Profile userList={userList} />
+          </Route>
+          <Route path="/editprofile/:id">
+            <EditProfile userList={userList} setUserList={setUserList} />
           </Route>
           <Route path="**" exact>
             <h2>404</h2>

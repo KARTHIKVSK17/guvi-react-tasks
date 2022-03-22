@@ -1,23 +1,28 @@
-import { useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useState } from "react";
 
-function AddUser({ userList, setUserList }) {
+function EditProfile({ userList, setUserList }) {
+  const { id } = useParams();
   const history = useHistory();
 
-  const [userName, setUserName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
-  const [userPic, setUserPic] = useState("");
+  const fdUser = userList.filter((obj) => {
+    return obj.id === id;
+  });
+
+  const [userName, setUserName] = useState(fdUser[0]["name"]);
+  const [userEmail, setUserEmail] = useState(fdUser[0]["email"]);
+  const [userPic, setUserPic] = useState(fdUser[0]["pic"]);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // console.log(userList);
-    let newUser = {
-      name: userName,
-      email: userEmail,
-      pic: userPic,
-      id: String(userList.length + 1),
-    };
-    setUserList([...userList, newUser]);
+    userList.forEach(function (obj) {
+      if (obj.id === id) {
+        obj["name"] = userName;
+        obj["email"] = userEmail;
+        obj["pic"] = userPic;
+      }
+    });
+    setUserList(userList);
     history.push("/");
   };
 
@@ -25,7 +30,7 @@ function AddUser({ userList, setUserList }) {
 
   return (
     <>
-      <h2>Add User</h2>
+      <h2>Edit User Profile({id})</h2>
       <form>
         <div className="mb-3">
           <input
@@ -69,4 +74,4 @@ function AddUser({ userList, setUserList }) {
   );
 }
 
-export default AddUser;
+export default EditProfile;

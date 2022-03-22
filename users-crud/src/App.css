@@ -4,8 +4,26 @@
   height: 30px;
 }
 
+.app-title a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.app-title small {
+  font-size: 12px;
+}
+
 .profile-btns button {
   margin-left: 10px;
+}
+.text-right {
+  text-align: right;
+}
+.text-right a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 10px;
+  line-height: 60px;
 }
 
 .navbar-nav {
