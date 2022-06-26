@@ -11,7 +11,8 @@ Rating according to value give Disable add to cart button when added to the card
 https://startbootstrap.com/previews/sb-admin-2 
 
 ## Task 4: User CRUD App
-"Design an UI to implement the CRUD // CRUD - Create,Read,Update,Delete // Dashboard // List Users - /users // Create User - /create-user // Edit User - /edit-user/:id // profile - /profile/:id // edit-profile – /edit-profile/:id"
+"Design an UI to implement the CRUD // CRUD - Create,Read,Update,Delete // Dashboard // List Users - /users // Create User - /create-user // Edit User - /edit-user/:id // profile - /profile/:id // edit-profile – /edit-profile/:id" <br />
+[Demo](https://vocal-frangipane-b7f1b0.netlify.app/)  |  [Source Code](https://github.com/eunicedhivya/guvi-react-tasks/tree/master/users-crud)
 
 ## Task 5: Shopping Cart
 
