@@ -1,4 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
+import Dashboard from "./../pages/Dashboard";
 function NavBar() {
   return (
     <header className="mb-4">
@@ -19,8 +20,8 @@ function NavBar() {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="nav-link text-white" to="/add">
-                  Add Product
+                <NavLink className="nav-link text-white" to="/dashboard">
+                  Dashboard
                 </NavLink>
               </li>
             </ul>

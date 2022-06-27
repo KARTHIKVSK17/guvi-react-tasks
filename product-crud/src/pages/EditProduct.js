@@ -1,47 +1,41 @@
-function EditProduct() {
+import * as Yup from "yup";
+import { useHistory, useParams } from "react-router-dom";
+import { useFormik } from "formik";
+import { useState, useEffect } from "react";
+import EditForm from "./EditForm";
+const formValidationSchema = Yup.object({
+  productName: Yup.string().required("  Product name is required"),
+  productPrice: Yup.number().required("  Product pricing is required"),
+  productImg: Yup.string().required("  Product image url is required"),
+});
+
+function AddProduct() {
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
+  const url = "https://618fa735f6bf4500174849a5.mockapi.io/products/" + id;
+  const history = useHistory();
+
+  const getProduct = () => {
+    fetch(url, { method: "GET" })
+      .then((data) => data.json())
+      .then((prd) => setProduct(prd));
+  };
+
+  useEffect(getProduct, []);
+
+  // const { productName, productPrice, productImg } = newProduct;
+
   return (
     <div className="container ">
       <div className="col-md-6 offset-md-3">
         <div className="row justify-content-center">
           <div className="card p-4 mt-5 bg-light">
-            <h2>
-              Edit Product :<small>(1)</small>
-            </h2>
-            <form>
-              <div className="form-group mb-3">
-                <label for="name">Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="name"
-                  name="name"
-                  value=""
-                />
-              </div>
-              <div className="form-group mb-3">
-                <label for="name">Price</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="price"
-                  name="price"
-                  value=""
-                />
-              </div>
-              <div className="form-group mb-3">
-                <label for="name">Pic</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="pic"
-                  name="pic"
-                  value=""
-                />
-              </div>
-              <button type="submit" className="btn btn-primary">
-                Submit
-              </button>
-            </form>
+            <h2>Edit Product {id}</h2>
+            {product ? (
+              <EditForm id={id} product={product} />
+            ) : (
+              "No Product to edit"
+            )}
           </div>
         </div>
       </div>
@@ -49,4 +43,4 @@ function EditProduct() {
   );
 }
 
-export default EditProduct;
+export default AddProduct;
